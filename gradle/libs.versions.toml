@@ -1,26 +1,9 @@
 [versions]
-## SDK Versions
-compileSdk = "31"
-minSdk = "24"
-targetSdk = "31"
-versionCode = "1"
-versionName = "0.1"
-applicationId = "com.netguru.multiplatform.charts"
-testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-optInFlags = "-opt-in=kotlin.RequiresOptIn"
-
-#kotlin
-jvmTarget = "11"
-
-#desktop
-desktop-packageVersion = "1.0.0"
-desktop-packageName = "jvm"
-
 # Dependencies
-kotlin-gradle-plugin = "1.6.10"
-android-gradle-plugin = "7.2.1"
-compose = "1.1.1"
-activity-compose = "1.4.0"
+kotlin-gradle-plugin = "1.9.23"
+android-gradle-plugin = "8.1.4"
+compose = "1.6.2"
+activity-compose = "1.9.0"
 coroutines = "1.6.0"
 appcompat = "1.4.1"
 core-ktx = "1.7.0"

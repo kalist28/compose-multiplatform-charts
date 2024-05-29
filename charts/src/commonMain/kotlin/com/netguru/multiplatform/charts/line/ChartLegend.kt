@@ -8,8 +8,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.GridCells
-import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.LaunchedEffect
@@ -41,7 +41,7 @@ fun ChartLegend(
 ) {
     LazyVerticalGrid(
         modifier = modifier,
-        cells = GridCells.Adaptive(200.dp),
+        columns = GridCells.Adaptive(200.dp),
         contentPadding = PaddingValues(
             start = 12.dp,
             top = 16.dp,
@@ -83,6 +83,7 @@ private fun LegendItem(
             targetValue = if (animationPlayed) 1f else 0f,
             animationSpec = animation.animationSpec(),
         ).value
+
         is ChartAnimation.Sequenced -> animateFloatAsState(
             targetValue = if (animationPlayed) 1f else 0f,
             animationSpec = animation.animationSpec(index),
@@ -103,6 +104,7 @@ private fun LegendItem(
                                 start = Offset(0f, size.height / 2),
                                 end = Offset(size.width, size.height / 2)
                             )
+
                         SymbolShape.RECTANGLE ->
                             drawRoundRect(
                                 color = data.color,

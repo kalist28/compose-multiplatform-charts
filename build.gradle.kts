@@ -1,6 +1,9 @@
+
 plugins {
-    @Suppress("DSL_SCOPE_VIOLATION")
-    alias(libs.plugins.ktlint)
+    id("maven-publish")
+    alias(libs.plugins.compose)
+    id("com.android.library") version "8.0.1" apply false
+    kotlin("multiplatform") version "1.9.20" apply false
 }
 
 buildscript {
@@ -20,13 +23,6 @@ group = libs.versions.project.group.get()
 version = libs.versions.project.version.get()
 
 allprojects {
-    apply(plugin = rootProject.libs.plugins.ktlint.get().pluginId)
-    configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
-        filter {
-            exclude { element -> element.file.path.contains("generated/") }
-        }
-    }
-
     repositories {
         google()
         mavenCentral()
@@ -34,8 +30,8 @@ allprojects {
     }
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions {
-            jvmTarget = libs.versions.jvmTarget.get()
-            freeCompilerArgs = freeCompilerArgs + listOf(libs.versions.optInFlags.get())
+            jvmTarget = "17"
+            freeCompilerArgs = freeCompilerArgs + listOf("-opt-in=kotlin.RequiresOptIn")
         }
     }
 }
