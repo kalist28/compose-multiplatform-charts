@@ -60,6 +60,8 @@ kotlin {
     iosArm64()
     iosSimulatorArm64()
 
+    jvm("desktop")
+
     sourceSets {
         commonMain {
             dependencies {
