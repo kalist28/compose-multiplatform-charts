@@ -38,10 +38,10 @@ Add maven repository:
 ```groovy
 repositories {
     // other
-    maven("https://kalist28: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@maven.pkg.github.com/kalist28/compose-multiplatform-charts")
+    maven("https://kalist28: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@maven.pkg.github.com/kalist28/compose-multiplatform-charts")
 }
 ```
-This repository with auth for read from Github Packages.
+This repository with token for read from Github Packages.
 
 # Usage
 The library provides following components:
