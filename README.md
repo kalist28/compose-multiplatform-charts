@@ -7,9 +7,6 @@
 Library contains several chart composables for usage in Kotlin Multiplatform projects.   
 </div>
 
-<div align="center"> 
-Currently supported platforms are <strong>Android, IOS</strong> and <strong>Desktop</strong>.
-</div>
 
 <div align="center">
   <br/><em>Updated with</em> &nbsp;❤️ <em>by</em> &nbsp; <a href="https://github.com/kalist28">Dmitry</a>
@@ -19,11 +16,32 @@ Currently supported platforms are <strong>Android, IOS</strong> and <strong>Desk
   <br/><em>Brought with</em> &nbsp;❤️ <em>by</em> &nbsp; <a href="https://www.netguru.com"><img align="center" alt="Netguru logo" src='./assets/readme_netguru_logo.png' width='30'/></a>
 </div>
 
+# Currently supported platforms
+|          Platform          | Supported |
+|:--------------------------:|:---------:|
+|         Android            |     ✅    |
+|           IOS              |     ✅    |
+|         Desktop            |     ✅    |
+
 # Installation
-### Using local build
-Go to `charts` folder and run `assemble[Debug|Release]`. This results in an `aar` file which can then be copied/imported to your project as any other `aar` artifact.
-### Using maven dependency
-TBA
+
+In Android or Kotlin Multiplatform project:
+
+```groovy
+dependencies {
+  implementation("com.netguru.multiplatform:charts:0.0.1")
+}
+```
+
+Add maven repository:
+
+```groovy
+repositories {
+    // other
+    maven("https://kalist28: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@maven.pkg.github.com/kalist28/compose-multiplatform-charts")
+}
+```
+This repository with auth for read from Github Packages.
 
 # Usage
 The library provides following components:
