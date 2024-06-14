@@ -10,7 +10,7 @@ plugins {
 android {
     namespace = "com.netguru.multiplatform.charts"
 
-    compileSdk = 33
+    compileSdk = 34
     buildFeatures.compose = true
 
     defaultConfig {
