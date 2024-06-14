@@ -1,4 +1,6 @@
 import org.gradle.accessors.dm.LibrariesForLibs
+import java.io.FileInputStream
+import java.util.Properties
 
 plugins {
     id("maven-publish")
@@ -83,5 +85,23 @@ kotlin {
     }
 }
 
+val mavenPropertiesFile = rootProject.file("publishing.properties")
+val mavenProperties = Properties().apply {
+    load(FileInputStream(mavenPropertiesFile))
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/kalist28/compose-multiplatform-charts")
+            credentials {
+                username = mavenProperties["user"] as String
+                password = mavenProperties["token"] as String
+            }
+        }
+    }
+}
+
 group = "com.netguru.multiplatform"
-version = "0.0.1_kalist-RC"
+version = "0.0.1"
