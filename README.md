@@ -35,13 +35,16 @@ dependencies {
 
 Add maven repository:
 
+Instead of {username}, insert your github login, and instead of {token}, insert a token (screenshot with example below)
+
 ```groovy
 repositories {
     // other
-    maven("https://kalist28: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@maven.pkg.github.com/kalist28/compose-multiplatform-charts")
+    maven("https://{username}:{token}@maven.pkg.github.com/kalist28/compose-multiplatform-charts")
 }
 ```
-This repository with token for read from Github Packages.
+Create token with read packages permission
+![image](https://github.com/kalist28/compose-multiplatform-charts/assets/26576320/1406f196-f5c7-44a6-ba16-cf646520bd07)
 
 # Usage
 The library provides following components:
